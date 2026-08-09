@@ -1,0 +1,173 @@
+/**
+ * Figma: Button (node 108:6599).
+ * Variant/tone/size/state mapping is documented in Button.tsx.
+ */
+
+.button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2x);
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body-medium);
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-stroke-focus);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ------------------------------------------------------------------ */
+/* Size — min-height, padding, type scale. `text` variant always uses */
+/* spacing-2x horizontal padding regardless of size (see below).      */
+/* ------------------------------------------------------------------ */
+
+.button[data-size="small"] {
+  min-height: 32px;
+  padding: var(--spacing-1x) var(--spacing-4x);
+  font-size: var(--font-size-body-medium-s);
+  line-height: var(--line-height-body-medium-s);
+}
+
+.button[data-size="medium"] {
+  min-height: 40px;
+  padding: var(--spacing-2x) var(--spacing-6x);
+  font-size: var(--font-size-body-medium-m);
+  line-height: var(--line-height-body-medium-m);
+}
+
+.button[data-size="large"] {
+  min-height: 48px;
+  padding: var(--spacing-2x) var(--spacing-8x);
+  font-size: var(--font-size-body-medium-l);
+  line-height: var(--line-height-body-medium-l);
+}
+
+.button[data-variant="text"] {
+  padding-inline: var(--spacing-2x);
+}
+
+/* ------------------------------------------------------------------ */
+/* Variant + tone — fill, border, label color                         */
+/* ------------------------------------------------------------------ */
+
+/* Primary — filled */
+.button[data-variant="primary"][data-tone="default"] {
+  background-color: var(--color-action-default);
+  color: var(--color-text-oncolor);
+}
+.button[data-variant="primary"][data-tone="default"]:hover:not(:disabled) {
+  background-color: var(--color-action-hover);
+}
+
+.button[data-variant="primary"][data-tone="danger"] {
+  background-color: var(--color-action-danger);
+  color: var(--color-text-oncolor);
+}
+.button[data-variant="primary"][data-tone="danger"]:hover:not(:disabled) {
+  background-color: var(--color-action-danger-hover);
+}
+
+.button[data-variant="primary"][data-tone="onColor"] {
+  background-color: var(--color-action-oncolor);
+  color: var(--color-text-default);
+}
+.button[data-variant="primary"][data-tone="onColor"]:hover:not(:disabled) {
+  background-color: var(--color-fill-neutral-subtle);
+}
+
+.button[data-variant="primary"]:disabled:not([data-loading="true"]) {
+  background-color: var(--color-action-disabled);
+  color: var(--color-text-ondisabled-subtle);
+}
+
+/* Secondary — outlined */
+.button[data-variant="secondary"] {
+  background-color: transparent;
+}
+
+.button[data-variant="secondary"][data-tone="default"] {
+  border-color: var(--color-action-default);
+  color: var(--color-text-primary-strong);
+}
+.button[data-variant="secondary"][data-tone="default"]:hover:not(:disabled) {
+  background-color: var(--color-action-hover-subtle);
+}
+
+.button[data-variant="secondary"][data-tone="danger"] {
+  border-color: var(--color-action-danger);
+  color: var(--color-text-danger-strong);
+}
+.button[data-variant="secondary"][data-tone="danger"]:hover:not(:disabled) {
+  background-color: var(--color-action-danger-hover-subtle);
+}
+
+.button[data-variant="secondary"][data-tone="onColor"] {
+  border-color: var(--color-action-oncolor);
+  color: var(--color-text-oncolor);
+}
+.button[data-variant="secondary"][data-tone="onColor"]:hover:not(:disabled) {
+  background-color: var(--color-opacity-surface-inverted-20);
+}
+
+.button[data-variant="secondary"]:disabled:not([data-loading="true"]) {
+  background-color: transparent;
+  border-color: var(--color-action-disabled);
+  color: var(--color-text-disabled);
+}
+
+/* Text — no fill, no border */
+.button[data-variant="text"] {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.button[data-variant="text"][data-tone="default"] {
+  color: var(--color-text-primary-strong);
+}
+.button[data-variant="text"][data-tone="default"]:hover:not(:disabled) {
+  background-color: var(--color-action-hover-subtle);
+}
+
+.button[data-variant="text"][data-tone="danger"] {
+  color: var(--color-text-danger-strong);
+}
+.button[data-variant="text"][data-tone="danger"]:hover:not(:disabled) {
+  background-color: var(--color-action-danger-hover-subtle);
+}
+
+.button[data-variant="text"][data-tone="onColor"] {
+  color: var(--color-text-oncolor);
+}
+.button[data-variant="text"][data-tone="onColor"]:hover:not(:disabled) {
+  background-color: var(--color-opacity-surface-inverted-20);
+}
+
+.button[data-variant="text"]:disabled:not([data-loading="true"]) {
+  background-color: transparent;
+  color: var(--color-text-disabled);
+}

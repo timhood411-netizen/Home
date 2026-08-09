@@ -1,0 +1,95 @@
+/**
+ * FPDS design tokens.
+ *
+ * Source of truth: Figma — FPDS / Web / Components
+ * (https://www.figma.com/design/HGkmlNBKwKdXzhLYQIPfHk/FPDS---Web_-Components)
+ *
+ * Names mirror the Figma variable paths 1:1 (`/` -> `-`) so a token can be
+ * traced back to its Figma variable by eye. Extend this file as new
+ * components pull in variables that aren't covered yet — do not invent
+ * one-off values in component CSS.
+ */
+
+:root {
+  /* ---------------------------------------------------------------- */
+  /* Color / action — interactive fills, borders, hover/disabled states */
+  /* ---------------------------------------------------------------- */
+  --color-action-default: #0562d2;
+  --color-action-hover: #044ea7;
+  --color-action-hover-subtle: #e4f1ff;
+  --color-action-disabled: #b2b2b2;
+  --color-action-danger: #c41a1a;
+  --color-action-danger-hover: #8c0f0f;
+  --color-action-danger-hover-subtle: #fde9e9;
+  --color-action-oncolor: #ffffff;
+  --color-action-neutral-moderate: #808080;
+
+  /* ---------------------------------------------------------------- */
+  /* Color / fill — surface fills                                     */
+  /* ---------------------------------------------------------------- */
+  --color-fill-default: #ffffff;
+  --color-fill-primary-strong: #0562d2;
+  --color-fill-neutral-subtle: #cccccc;
+
+  /* ---------------------------------------------------------------- */
+  /* Color / text                                                     */
+  /* ---------------------------------------------------------------- */
+  --color-text-default: #000000;
+  --color-text-oncolor: #ffffff;
+  --color-text-primary-strong: #0559bf;
+  --color-text-danger-strong: #c41a1a;
+  --color-text-disabled: #b2b2b2;
+  --color-text-ondisabled-subtle: #ffffff;
+  --color-text-ondisabled-strong: #999999;
+  --color-text-placeholder: #808080;
+
+  /* ---------------------------------------------------------------- */
+  /* Color / stroke                                                   */
+  /* ---------------------------------------------------------------- */
+  --color-stroke-focus: #0562d2;
+
+  /* ---------------------------------------------------------------- */
+  /* Color / opacity surfaces — translucent overlays on colored/dark   */
+  /* backgrounds (e.g. hover states for OnColor-type controls)         */
+  /* ---------------------------------------------------------------- */
+  --color-opacity-surface-inverted-20: #ffffff33;
+  --color-opacity-surface-inverted-40: #ffffff66;
+  --color-opacity-surface-default-10: #00142e1a;
+
+  /* ---------------------------------------------------------------- */
+  /* Spacing                                                          */
+  /* ---------------------------------------------------------------- */
+  --spacing-1x: 4px;
+  --spacing-2x: 8px;
+  --spacing-4x: 16px;
+  --spacing-6x: 24px;
+  --spacing-8x: 32px;
+
+  /* ---------------------------------------------------------------- */
+  /* Radius                                                           */
+  /* ---------------------------------------------------------------- */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-full: 8000px;
+
+  /* ---------------------------------------------------------------- */
+  /* Sizing                                                           */
+  /* ---------------------------------------------------------------- */
+  --sizing-8x: 32px;
+
+  /* ---------------------------------------------------------------- */
+  /* Typography — font family / weight                                */
+  /* ---------------------------------------------------------------- */
+  --font-family-body: "Ford-f1", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-weight-body-regular: 400;
+  --font-weight-body-medium: 500;
+  --font-weight-body-semibold: 600;
+
+  /* Typography — body/medium scale (used by Button labels) */
+  --font-size-body-medium-s: 14px;
+  --line-height-body-medium-s: 20px;
+  --font-size-body-medium-m: 16px;
+  --line-height-body-medium-m: 24px;
+  --font-size-body-medium-l: 18px;
+  --line-height-body-medium-l: 28px;
+}
