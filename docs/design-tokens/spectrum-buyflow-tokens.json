@@ -1,0 +1,206 @@
+{
+  "$schema": "spectrum-buyflow-design-tokens-v1",
+  "source": {
+    "url": "https://www.spectrum.com/buy/tv",
+    "app": "Spectrum DM Buyflow (Angular)",
+    "extractedFrom": "Local 'Webpage, Complete' save (View Source, no live fetch — spectrum.com is blocked by this environment's egress policy)",
+    "extractedAt": "2026-08-09",
+    "notes": "Two component libraries coexist: a legacy '--bf-*' token set and a newer 'Nova' system driving buttons and typography. The site's main stylesheet (styles-LIVZUCIK.css) and its --nova-* root token definitions were not captured — see knownGaps."
+  },
+
+  "fonts": {
+    "primary": {
+      "family": "Spectrum Sans",
+      "type": "self-hosted webfont",
+      "format": "woff2",
+      "path": "spectrum.com/assets/fonts/SpectrumSans/",
+      "weights": {
+        "light": "SpectrumSans_W_Lt.woff2",
+        "regular": "SpectrumSans_W_Rg.woff2",
+        "book": "SpectrumSans_W_Bk.woff2",
+        "medium": "SpectrumSans_W_Md.woff2",
+        "bold": "SpectrumSans_W_Bd.woff2",
+        "extraBold": "SpectrumSans_W_XBd.woff2"
+      }
+    },
+    "icons": {
+      "family": ["Material Icons", "Material Icons Outlined"],
+      "source": "Google Fonts",
+      "iconsLoaded": ["close", "edit", "file_download", "print"]
+    }
+  },
+
+  "color": {
+    "brand": {
+      "bf-color-primary": "#0099d8",
+      "bf-color-primary-dark": "#002133",
+      "bf-color-selected": "#0271eb",
+      "bf-focus-ring-color": "#0271eb",
+      "nova-action-blue": "#005eff"
+    },
+    "blue": {
+      "bf-color-blue-5": "#0171eb",
+      "bf-color-blue-10": "#008cff",
+      "bf-color-blue-20": "#0073d1",
+      "bf-color-blue-30": "#0062b2",
+      "bf-color-blue-40": "#00629b",
+      "bf-color-light-blue-10": "#b7cee5",
+      "bf-color-light-blue-15": "#add8e6",
+      "bf-color-light-blue-20": "#5db8fc",
+      "bf-color-dark-blue-10": "#004366",
+      "bf-color-dark-blue-20": "#002133",
+      "bf-color-dark-blue-30": "#001019",
+      "bf-color-dark-blue-40": "#003057"
+    },
+    "neutral": {
+      "bf-color-white": "#ffffff",
+      "bf-color-gray-5": "#fafafa",
+      "bf-color-gray-10": "#f8f8f8",
+      "bf-color-gray-20": "#f5f5f5",
+      "bf-color-gray-25": "#d9dad9",
+      "bf-color-gray-27": "#e0e0e0",
+      "bf-color-gray-30": "#737373",
+      "bf-color-gray-40": "#808080",
+      "bf-color-charcoal": "#333333",
+      "bf-color-charcoal-2": "#222222",
+      "bf-color-black": "#000000"
+    },
+    "semantic": {
+      "success": "#008516",
+      "success-dark": "#00bf1f",
+      "error": "#d6312b",
+      "error-dark": "#ff4d4a",
+      "caution": "#feb533",
+      "info": "#5db8fc",
+      "neutral": "#5db8fc",
+      "red-30": "#e71313",
+      "red-40": "#e71414",
+      "yellow-10": "#ffd400"
+    }
+  },
+
+  "button": {
+    "base": {
+      "shape": "pill",
+      "borderRadius": "999px",
+      "padding": "10px 22px",
+      "fontSize": "16px",
+      "lineHeight": 1.5,
+      "fontWeight": "bold"
+    },
+    "variants": {
+      "ghost": { "background": "transparent", "border": "transparent", "text": "#005eff", "hoverBg": "#d9e7ff", "activeBg": "#c1d8ff" },
+      "primary": { "background": "#005eff", "border": "#005eff", "text": "#ffffff", "hoverBg": "#003ca4", "activeBg": "#002b75" },
+      "secondary": { "background": "#ffffff", "border": "#005eff", "text": "#005eff" },
+      "dark": { "background": "#ffffff", "border": "#005eff", "text": "#005eff", "hoverBg": "#d9e7ff", "activeBg": "#c1d8ff" },
+      "disabled": { "background": "#f0f0f0", "border": "#f0f0f0", "text": "#cccccc", "backgroundDark": "#4d4d4d" }
+    },
+    "focusRing": "rgba(0, 94, 255, .75)"
+  },
+
+  "typography": {
+    "scale": [
+      { "role": "display-large",   "mobilePx": 56, "mobileLineHeight": 1.2142857143, "desktopPx": 96, "desktopLineHeight": 1.1041666667 },
+      { "role": "header-h1",       "alias": "heading-large",   "mobilePx": 48, "mobileLineHeight": 1.2083333333, "desktopPx": 72, "desktopLineHeight": 1.1111111111 },
+      { "role": "header-h2",       "alias": "heading-medium",  "mobilePx": 36, "mobileLineHeight": 1.2222222222, "desktopPx": 56, "desktopLineHeight": 1.2142857143 },
+      { "role": "header-h3",       "alias": "heading-small",   "mobilePx": 32, "mobileLineHeight": 1.25,          "desktopPx": 48, "desktopLineHeight": 1.2083333333 },
+      { "role": "header-h4",       "mobilePx": 24, "mobileLineHeight": 1.4166666667, "desktopPx": 36, "desktopLineHeight": 1.2222222222 },
+      { "role": "header-h5",       "alias": "subtitle-small",  "mobilePx": 20, "mobileLineHeight": 1.4,           "desktopPx": 32, "desktopLineHeight": 1.25 },
+      { "role": "header-h6",       "mobilePx": 18, "mobileLineHeight": 1.4444444444, "desktopPx": 24, "desktopLineHeight": 1.4166666667 },
+      { "role": "subtitle-medium", "mobilePx": 24, "mobileLineHeight": 1.4166666667, "desktopPx": 36, "desktopLineHeight": 1.2222222222 },
+      { "role": "body-large",      "mobilePx": 18, "mobileLineHeight": 1.4444444444, "desktopPx": 24, "desktopLineHeight": 1.4166666667 },
+      { "role": "body-medium",     "alias": "paragraph-p1",    "mobilePx": 16, "mobileLineHeight": 1.375,         "desktopPx": 18, "desktopLineHeight": 1.4444444444 },
+      { "role": "body-small",      "alias": "paragraph-p2",    "mobilePx": 14, "mobileLineHeight": 1.4285714286, "desktopPx": 16, "desktopLineHeight": 1.375 },
+      { "role": "body-extra-small","alias": "paragraph-p3",    "mobilePx": 12, "mobileLineHeight": 1.5,           "desktopPx": 14, "desktopLineHeight": 1.4285714286 },
+      { "role": "label-large",     "mobilePx": 14, "mobileLineHeight": 1.2857142857, "desktopPx": 16, "desktopLineHeight": 1.25 },
+      { "role": "label-medium",    "mobilePx": 14, "mobileLineHeight": 1.2857142857, "desktopPx": null, "desktopLineHeight": null },
+      { "role": "label-small",     "mobilePx": 12, "mobileLineHeight": 1.1666666667, "desktopPx": null, "desktopLineHeight": null },
+      { "role": "disclaimer",      "mobilePx": 12, "mobileLineHeight": 1.5,           "desktopPx": null, "desktopLineHeight": null },
+      { "role": "disclaimer-header","mobilePx": 12, "mobileLineHeight": 1.5,          "desktopPx": null, "desktopLineHeight": null }
+    ],
+    "fontWeightTokens": ["nova-font-weight-regular", "nova-font-weight-medium", "nova-font-weight-bold", "nova-font-weight-extra-bold"],
+    "modifiers": {
+      "--fixed-desktop": "pins the desktop size regardless of viewport",
+      "--fixed-mobile": "pins the mobile/base size regardless of viewport"
+    }
+  },
+
+  "spacing": {
+    "element": {
+      "bf-size-xxs": "0.25rem",
+      "bf-size-2": "0.125rem",
+      "bf-size-xs": "0.5rem",
+      "bf-size-sm": "0.75rem",
+      "bf-size-14": "0.875rem",
+      "bf-size-md": "1rem",
+      "bf-size-lg": "1.25rem",
+      "bf-size-xl": "1.5rem",
+      "bf-size-xxl": "2rem",
+      "bf-size-xxxl": "2.5rem"
+    },
+    "section": {
+      "bf-spacing-section-xs": "3rem",
+      "bf-spacing-section-sm": "4rem",
+      "bf-spacing-section-md": "5rem",
+      "bf-spacing-section-lg": "6.25rem",
+      "bf-spacing-section-xl": "7.5rem"
+    }
+  },
+
+  "borderRadius": {
+    "bf-size-radius-sm": "0.125rem",
+    "bf-size-radius-md": "0.25rem",
+    "bf-size-radius-lg": "0.5rem",
+    "bf-size-radius-circle": "50%",
+    "modal": "16px",
+    "buttonPill": "999px",
+    "otherLiteralsObserved": ["3px", "5px", "6px", "9px", "10px", "12px", "14px", "20px"]
+  },
+
+  "shadow": {
+    "cardRest": "0 2px 4px #0000001a",
+    "cardHover": "0 4px 12px #0000001a",
+    "modalOverlay": "0 8px 32px #0000001f",
+    "selectedBlueSmall": "0 2px 8px #0476d933",
+    "selectedBlueMedium": "0 4px 12px #0476d91a",
+    "selectedBlueLarge": "0 8px 24px #0476d926",
+    "selectedBlueXLarge": "0 8px 24px #0476d940",
+    "promoGreenSmall": "0 2px 8px #00a65166",
+    "promoGreenMedium": "0 4px 12px #00a65166"
+  },
+
+  "gradient": {
+    "optimizedFlowBackground": "linear-gradient(135deg,#1e3a8a,#1e40af)",
+    "promoGreen": "linear-gradient(135deg,#008542,#00c965)",
+    "cardBlueA": "linear-gradient(135deg,#f0f7ff,#e3f2fd)",
+    "cardBlueB": "linear-gradient(135deg,#f0f7ff,#e8f1fd)",
+    "cardGreen": "linear-gradient(135deg,#f0fff0,#e8f5e9)",
+    "cardNeutral": "linear-gradient(135deg,#f8f9fa,#fff)"
+  },
+
+  "breakpoints": {
+    "px": [320, 575, 600, 744, 745, 767, 768, 810, 840, 992, 999, 1000, 1024, 1200, 1281],
+    "dominant": { "mobile": "max-width: 767px", "desktop": "min-width: 768px" }
+  },
+
+  "knownGaps": {
+    "reason": "Referenced via var(--nova-...) throughout the captured CSS but never defined in what was saved; values live in the uncaptured styles-LIVZUCIK.css.",
+    "undefinedTokens": [
+      "--nova-surface-base",
+      "--nova-surface-overlay-page",
+      "--nova-border-focus-primary",
+      "--nova-border-minimal",
+      "--nova-border-moderate",
+      "--nova-text-primary-dark",
+      "--nova-text-secondary-dark",
+      "--nova-text-tertiary-dark",
+      "--nova-font-family",
+      "--nova-font-weight-regular",
+      "--nova-font-weight-medium",
+      "--nova-font-weight-bold",
+      "--nova-font-weight-extra-bold",
+      "--nova-icon-color",
+      "--nova-icon-size"
+    ]
+  }
+}
