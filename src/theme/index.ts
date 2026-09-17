@@ -60,6 +60,16 @@ export const theme = createTheme({
       dark: color('color.palette.error.1200'),
       contrastText: '#ffffff', // no token — contrast-checked against Red/1000
     },
+    // Not a standard MUI intent. The Event Banner doc's Button "OnColor"
+    // type (white fill / black label, used when the button sits on a
+    // neutral-strong or primary-strong banner) has no semantic path in the
+    // export — color.fill only defines "action-default". Built directly
+    // from the Base primitives instead, and exposed as Button color="onColor"
+    // via the module augmentation in src/theme/augment.d.ts.
+    onColor: {
+      main: color('color.palette.base.white'),
+      contrastText: color('color.text.default.body'), // Base/black
+    },
     text: {
       primary: color('color.text.default.body'), // Base/black
       // No "secondary"/"disabled" text tokens exist — the tokens' own
@@ -110,8 +120,15 @@ export const theme = createTheme({
     caption: { ...type('type.font-size.caption.S', 'type.line-height.caption.S'), fontWeight: weight.regular },
     // Closest match to the tokens' "eyebrow" style — MUI has no eyebrow variant.
     overline: { ...type('type.font-size.eyebrow.S', 'type.line-height.eyebrow.S'), fontWeight: weight.medium },
-    // subtitle1/subtitle2/button have no matching semantic type token —
-    // left at MUI defaults.
+    // Button doc names "body/medium" as the CTA label style; body.medium.M
+    // is the baseline (MuiButton styleOverrides below swap in .S/.L for the
+    // small/large size variants).
+    button: {
+      ...type('type.font-size.body.medium.M', 'type.line-height.body.medium.M'),
+      fontWeight: weight.medium,
+      textTransform: 'none', // no text-case token — FPDS button labels are sentence case, not uppercase
+    },
+    // subtitle1/subtitle2 have no matching semantic type token — left at MUI defaults.
   },
 
   shape: {
@@ -137,4 +154,42 @@ export const theme = createTheme({
   },
 
   // shadows, transitions, and zIndex have no token source — left at MUI defaults.
+
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true, // no shadow/elevation tokens are defined for buttons
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: num('radius.full'), // pill shape — Button/CTA doc: radius/full
+        },
+        outlined: {
+          // No button-specific border-width token; stroke.sm (2px) is the
+          // closest generic stroke step in the tokens.
+          borderWidth: num('stroke.sm'),
+          '&:hover': {
+            borderWidth: num('stroke.sm'),
+          },
+        },
+        sizeSmall: {
+          // No button-padding tokens — inferred from the spacing scale.
+          paddingInline: num('spacing.16x'),
+          paddingBlock: num('spacing.8x'),
+          ...type('type.font-size.body.medium.S', 'type.line-height.body.medium.S'),
+        },
+        sizeMedium: {
+          paddingInline: num('spacing.24x'),
+          paddingBlock: num('spacing.12x'),
+          ...type('type.font-size.body.medium.M', 'type.line-height.body.medium.M'),
+        },
+        sizeLarge: {
+          paddingInline: num('spacing.32x'),
+          paddingBlock: num('spacing.16x'),
+          minHeight: 48, // Event Banner CTA doc: Large CTA min-height 48px (no token — doc-only value)
+          ...type('type.font-size.body.medium.L', 'type.line-height.body.medium.L'),
+        },
+      },
+    },
+  },
 })
