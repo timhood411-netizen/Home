@@ -2,10 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
-import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/400.css'
-import '@fontsource/roboto/500.css'
-import '@fontsource/roboto/700.css'
+// Inter is the tokens' body font (type.font-family.body) and is the only one
+// of the two font-family tokens with files we actually have — see
+// src/theme/index.ts for the Ford-f1 (headline) fallback situation.
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
 import './index.css'
 import App from './App.tsx'
 import { theme } from './theme/index.ts'

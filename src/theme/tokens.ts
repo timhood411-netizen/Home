@@ -60,3 +60,4 @@ export function token(path: string, depth = 0): TokenValue {
 
 export const num = (path: string): number => Number(token(path))
 export const color = (path: string): string => String(token(path))
+export const str = (path: string): string => String(token(path))

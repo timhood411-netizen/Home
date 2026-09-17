@@ -154,6 +154,10 @@
     }
   },
   "type": {
+    "font-family": {
+      "headline": { "$type": "string", "$value": "Ford-f1" },
+      "body": { "$type": "string", "$value": "Inter" }
+    },
     "font-weight": {
       "regular": { "$type": "number", "$value": 400 },
       "medium": { "$type": "number", "$value": 500 },

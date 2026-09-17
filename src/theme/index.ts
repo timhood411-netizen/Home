@@ -1,5 +1,13 @@
 import { createTheme } from '@mui/material/styles'
-import { color, num } from './tokens'
+import { color, num, str } from './tokens'
+
+// type.font-family.body ("Inter") is installed via @fontsource/inter.
+// type.font-family.headline ("Ford-f1") is Ford's proprietary typeface —
+// the token names it, but no font files for it are available in this
+// project, so it leads the headline stack and falls back to the body font
+// (Inter) until real files are supplied.
+const bodyFontStack = `"${str('type.font-family.body')}", "Helvetica", "Arial", sans-serif`
+const headlineFontStack = `"${str('type.font-family.headline')}", ${bodyFontStack}`
 
 // Semantic weight scale (semibold is the heaviest weight the tokens define —
 // there is no separate "bold" token, so fontWeightBold reuses it rather than
@@ -104,17 +112,18 @@ export const theme = createTheme({
   },
 
   typography: {
-    // No font family token in the export — keeps MUI's own default stack
-    // (Roboto, already installed via @fontsource/roboto).
+    fontFamily: bodyFontStack, // type.font-family.body ("Inter")
     fontWeightRegular: weight.regular,
     fontWeightMedium: weight.medium,
     fontWeightBold: weight.semibold,
-    h1: { ...type('type.font-size.headline.XXL', 'type.line-height.headline.XXL'), fontWeight: weight.semibold },
-    h2: { ...type('type.font-size.headline.XL', 'type.line-height.headline.XL'), fontWeight: weight.semibold },
-    h3: { ...type('type.font-size.headline.L', 'type.line-height.headline.L'), fontWeight: weight.semibold },
-    h4: { ...type('type.font-size.headline.M', 'type.line-height.headline.M'), fontWeight: weight.semibold },
-    h5: { ...type('type.font-size.headline.S', 'type.line-height.headline.S'), fontWeight: weight.semibold },
-    h6: { ...type('type.font-size.headline.XS', 'type.line-height.headline.XS'), fontWeight: weight.semibold },
+    // Headline variants use type.font-family.headline ("Ford-f1") — see the
+    // stack comment above for why it falls back to the body font.
+    h1: { ...type('type.font-size.headline.XXL', 'type.line-height.headline.XXL'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h2: { ...type('type.font-size.headline.XL', 'type.line-height.headline.XL'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h3: { ...type('type.font-size.headline.L', 'type.line-height.headline.L'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h4: { ...type('type.font-size.headline.M', 'type.line-height.headline.M'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h5: { ...type('type.font-size.headline.S', 'type.line-height.headline.S'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h6: { ...type('type.font-size.headline.XS', 'type.line-height.headline.XS'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
     body1: { ...type('type.font-size.body.regular.M', 'type.line-height.body.regular.M'), fontWeight: weight.regular },
     body2: { ...type('type.font-size.body.regular.S', 'type.line-height.body.regular.S'), fontWeight: weight.regular },
     caption: { ...type('type.font-size.caption.S', 'type.line-height.caption.S'), fontWeight: weight.regular },
