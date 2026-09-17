@@ -93,7 +93,7 @@
       "700": { "$type": "color", "$value": "#cf834d" },
       "800": { "$type": "color", "$value": "#c87133" },
       "900": { "$type": "color", "$value": "#c16019" },
-      "1000": { "$type": "color", "$value": "#c16019" },
+      "1000": { "$type": "color", "$value": "#ba4e00" },
       "1100": { "$type": "color", "$value": "#a74600" },
       "1200": { "$type": "color", "$value": "#953e00" },
       "1300": { "$type": "color", "$value": "#823700" },

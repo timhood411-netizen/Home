@@ -28,26 +28,32 @@ const type = (sizePath: string, lineHeightPath: string) => {
 
 export const theme = createTheme({
   palette: {
+    // primary/secondary/tertiary were re-pointed to match the Tim's
+    // Foundations Figma file's own internal variable naming (Ford Blue =
+    // "primary", Grabber = "secondary", Skyview = "accent"), which differs
+    // from — and now supersedes — the original FPDS export's assignment
+    // (Skyview was "primary" there).
     primary: {
-      main: color('color.palette.primary.1000'), // Skyview/1000
+      main: color('color.palette.primary.1000'), // Ford Blue/1000
       light: color('color.palette.primary.400'),
       dark: color('color.palette.primary.1200'),
-      contrastText: color('color.text.primary.on-color'), // Skyview/100
+      contrastText: color('color.text.primary.on-color'), // Ford Blue/100
     },
     secondary: {
-      main: color('color.palette.secondary.1000'), // Ford Blue/1000
+      main: color('color.palette.secondary.1000'), // Grabber/1000
       light: color('color.palette.secondary.400'),
       dark: color('color.palette.secondary.1200'),
-      contrastText: color('color.text.secondary.on-color'), // Ford Blue/100
+      contrastText: color('color.text.secondary.on-color'), // Grabber/100
     },
-    // Tokens have no "info" family. Tertiary (Grabber) is the leftover
-    // brand accent once primary/secondary/success/caution/error are spoken
-    // for, so it fills MUI's fifth intent.
+    // Tokens have no "info" family. Tertiary (Skyview, "accent" in the
+    // Tim's Foundations file) is the leftover brand accent once
+    // primary/secondary/success/caution/error are spoken for, so it fills
+    // MUI's fifth intent.
     info: {
-      main: color('color.palette.tertiary.1000'), // Grabber/1000
+      main: color('color.palette.tertiary.1000'), // Skyview/1000
       light: color('color.palette.tertiary.400'),
       dark: color('color.palette.tertiary.1200'),
-      contrastText: '#ffffff', // no token — contrast-checked against Grabber/1000
+      contrastText: '#ffffff', // no token — contrast-checked against Skyview/1000
     },
     success: {
       main: color('color.palette.success.1000'), // Green/1000
@@ -55,7 +61,9 @@ export const theme = createTheme({
       dark: color('color.palette.success.1200'),
       contrastText: '#ffffff', // no token — contrast-checked against Green/1000
     },
-    // "caution" in the tokens is MUI's "warning".
+    // "caution" in the tokens is MUI's "warning". Amber/1000 was fixed
+    // against the Tim's Foundations file (#ba4e00) — the original FPDS
+    // export had it duplicating Amber/900 (#c16019).
     warning: {
       main: color('color.palette.caution.1000'), // Amber/1000
       light: color('color.palette.caution.400'),
