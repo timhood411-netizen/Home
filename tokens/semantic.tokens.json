@@ -105,6 +105,22 @@
   "color": {
     "palette": {
       "primary": {
+        "100": { "$type": "color", "$value": "{Color.Skyview.100}" },
+        "200": { "$type": "color", "$value": "{Color.Skyview.200}" },
+        "300": { "$type": "color", "$value": "{Color.Skyview.300}" },
+        "400": { "$type": "color", "$value": "{Color.Skyview.400}" },
+        "500": { "$type": "color", "$value": "{Color.Skyview.500}" },
+        "600": { "$type": "color", "$value": "{Color.Skyview.600}" },
+        "700": { "$type": "color", "$value": "{Color.Skyview.700}" },
+        "800": { "$type": "color", "$value": "{Color.Skyview.800}" },
+        "900": { "$type": "color", "$value": "{Color.Skyview.900}" },
+        "1000": { "$type": "color", "$value": "{Color.Skyview.1000}" },
+        "1100": { "$type": "color", "$value": "{Color.Skyview.1100}" },
+        "1200": { "$type": "color", "$value": "{Color.Skyview.1200}" },
+        "1300": { "$type": "color", "$value": "{Color.Skyview.1300}" },
+        "1400": { "$type": "color", "$value": "{Color.Skyview.1400}" }
+      },
+      "secondary": {
         "100": { "$type": "color", "$value": "{Color.Ford Blue.100}" },
         "200": { "$type": "color", "$value": "{Color.Ford Blue.200}" },
         "300": { "$type": "color", "$value": "{Color.Ford Blue.300}" },
@@ -120,7 +136,7 @@
         "1300": { "$type": "color", "$value": "{Color.Ford Blue.1300}" },
         "1400": { "$type": "color", "$value": "{Color.Ford Blue.1400}" }
       },
-      "secondary": {
+      "tertiary": {
         "100": { "$type": "color", "$value": "{Color.Grabber.100}" },
         "200": { "$type": "color", "$value": "{Color.Grabber.200}" },
         "300": { "$type": "color", "$value": "{Color.Grabber.300}" },
@@ -135,22 +151,6 @@
         "1200": { "$type": "color", "$value": "{Color.Grabber.1200}" },
         "1300": { "$type": "color", "$value": "{Color.Grabber.1300}" },
         "1400": { "$type": "color", "$value": "{Color.Grabber.1400}" }
-      },
-      "tertiary": {
-        "100": { "$type": "color", "$value": "{Color.Skyview.100}" },
-        "200": { "$type": "color", "$value": "{Color.Skyview.200}" },
-        "300": { "$type": "color", "$value": "{Color.Skyview.300}" },
-        "400": { "$type": "color", "$value": "{Color.Skyview.400}" },
-        "500": { "$type": "color", "$value": "{Color.Skyview.500}" },
-        "600": { "$type": "color", "$value": "{Color.Skyview.600}" },
-        "700": { "$type": "color", "$value": "{Color.Skyview.700}" },
-        "800": { "$type": "color", "$value": "{Color.Skyview.800}" },
-        "900": { "$type": "color", "$value": "{Color.Skyview.900}" },
-        "1000": { "$type": "color", "$value": "{Color.Skyview.1000}" },
-        "1100": { "$type": "color", "$value": "{Color.Skyview.1100}" },
-        "1200": { "$type": "color", "$value": "{Color.Skyview.1200}" },
-        "1300": { "$type": "color", "$value": "{Color.Skyview.1300}" },
-        "1400": { "$type": "color", "$value": "{Color.Skyview.1400}" }
       },
       "neutral": {
         "0": { "$type": "color", "$value": "{Color.Neutral.000}" },
@@ -168,20 +168,20 @@
         "1200": { "$type": "color", "$value": "{Color.Neutral.1200}" }
       },
       "action": {
-        "100": { "$type": "color", "$value": "{Color.Ford Blue.100}" },
-        "200": { "$type": "color", "$value": "{Color.Ford Blue.200}" },
-        "300": { "$type": "color", "$value": "{Color.Ford Blue.300}" },
-        "400": { "$type": "color", "$value": "{Color.Ford Blue.400}" },
-        "500": { "$type": "color", "$value": "{Color.Ford Blue.500}" },
-        "600": { "$type": "color", "$value": "{Color.Ford Blue.600}" },
-        "700": { "$type": "color", "$value": "{Color.Ford Blue.700}" },
-        "800": { "$type": "color", "$value": "{Color.Ford Blue.800}" },
-        "900": { "$type": "color", "$value": "{Color.Ford Blue.900}" },
-        "1000": { "$type": "color", "$value": "{Color.Ford Blue.1000}" },
-        "1100": { "$type": "color", "$value": "{Color.Ford Blue.1100}" },
-        "1200": { "$type": "color", "$value": "{Color.Ford Blue.1200}" },
-        "1300": { "$type": "color", "$value": "{Color.Ford Blue.1300}" },
-        "1400": { "$type": "color", "$value": "{Color.Ford Blue.1400}" }
+        "100": { "$type": "color", "$value": "{Color.Skyview.100}" },
+        "200": { "$type": "color", "$value": "{Color.Skyview.200}" },
+        "300": { "$type": "color", "$value": "{Color.Skyview.300}" },
+        "400": { "$type": "color", "$value": "{Color.Skyview.400}" },
+        "500": { "$type": "color", "$value": "{Color.Skyview.500}" },
+        "600": { "$type": "color", "$value": "{Color.Skyview.600}" },
+        "700": { "$type": "color", "$value": "{Color.Skyview.700}" },
+        "800": { "$type": "color", "$value": "{Color.Skyview.800}" },
+        "900": { "$type": "color", "$value": "{Color.Skyview.900}" },
+        "1000": { "$type": "color", "$value": "{Color.Skyview.1000}" },
+        "1100": { "$type": "color", "$value": "{Color.Skyview.1100}" },
+        "1200": { "$type": "color", "$value": "{Color.Skyview.1200}" },
+        "1300": { "$type": "color", "$value": "{Color.Skyview.1300}" },
+        "1400": { "$type": "color", "$value": "{Color.Skyview.1400}" }
       },
       "success": {
         "100": { "$type": "color", "$value": "{Color.Green.100}" },
