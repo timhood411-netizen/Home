@@ -208,6 +208,35 @@ export const theme = createTheme({
           ...type('type.font-size.body.medium.L', 'type.line-height.body.medium.L'),
         },
       },
+      // outlined's border (stroke.sm, 2px) adds height that text/contained
+      // don't have (they have no border) — trim outlined's padding by the
+      // border width on each edge so all three variants render the same
+      // size. MUI does this by default for its own 1px border; the
+      // sizeSmall/Medium/Large overrides above apply to every variant
+      // uniformly, so it has to be redone here for stroke.sm.
+      variants: [
+        {
+          props: { variant: 'outlined', size: 'small' },
+          style: {
+            paddingInline: num('spacing.16x') - num('stroke.sm'),
+            paddingBlock: num('spacing.8x') - num('stroke.sm'),
+          },
+        },
+        {
+          props: { variant: 'outlined', size: 'medium' },
+          style: {
+            paddingInline: num('spacing.24x') - num('stroke.sm'),
+            paddingBlock: num('spacing.12x') - num('stroke.sm'),
+          },
+        },
+        {
+          props: { variant: 'outlined', size: 'large' },
+          style: {
+            paddingInline: num('spacing.32x') - num('stroke.sm'),
+            paddingBlock: num('spacing.16x') - num('stroke.sm'),
+          },
+        },
+      ],
     },
   },
 })
