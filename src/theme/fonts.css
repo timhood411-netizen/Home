@@ -1,0 +1,13 @@
+/* Ford's proprietary typeface. Only the Semibold (600) cut is available so
+   far — this is the exact weight the tokens use for headline text
+   (type.font-weight.headline.semibold). font-weight is declared as a single
+   value, not a range, so the browser doesn't pick this face for other
+   weights (regular/medium body text) once those are requested — it falls
+   through to the rest of the font-family stack (Inter) instead. */
+@font-face {
+  font-family: 'Ford-f1';
+  src: url('../assets/fonts/FordF1-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

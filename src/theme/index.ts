@@ -1,13 +1,20 @@
 import { createTheme } from '@mui/material/styles'
 import { color, num, str } from './tokens'
 
-// type.font-family.headline ("Ford-f1") is Ford's proprietary typeface —
-// the token names it, but no font files for it are available in this
-// project, so every variant leads with it and falls back to the body font
-// (type.font-family.body, "Inter", installed via @fontsource/inter) until
-// real Ford-f1 files are supplied.
-const fallbackFontStack = `"${str('type.font-family.body')}", "Helvetica", "Arial", sans-serif`
-const fontStack = `"${str('type.font-family.headline')}", ${fallbackFontStack}`
+// type.font-family.body ("Inter") is installed via @fontsource/inter and is
+// the base for every typography variant.
+const bodyFontStack = `"${str('type.font-family.body')}", "Helvetica", "Arial", sans-serif`
+
+// type.font-family.headline ("Ford-f1") — only the Semibold (600) file has
+// been supplied so far (src/theme/fonts.css), and its @font-face declares
+// font-weight: 600 as a single value, not a range. That matters: within a
+// matched font-family, the browser picks the nearest *available* weight
+// before ever falling through to the next family in the stack, so if this
+// stack were applied to regular/medium-weight text too, it would render
+// using the Semibold cut instead of falling back to Inter. Scoped to h1-h6
+// below, which is the only place the tokens actually call for semibold —
+// safe to widen once more Ford-f1 weights are supplied.
+const headlineFontStack = `"${str('type.font-family.headline')}", ${bodyFontStack}`
 
 // Semantic weight scale (semibold is the heaviest weight the tokens define —
 // there is no separate "bold" token, so fontWeightBold reuses it rather than
@@ -121,18 +128,18 @@ export const theme = createTheme({
   },
 
   typography: {
-    // All variants use type.font-family.headline ("Ford-f1") — see the
-    // stack comment above for why it falls back to the body font (Inter).
-    fontFamily: fontStack,
+    fontFamily: bodyFontStack, // type.font-family.body ("Inter")
     fontWeightRegular: weight.regular,
     fontWeightMedium: weight.medium,
     fontWeightBold: weight.semibold,
-    h1: { ...type('type.font-size.headline.XXL', 'type.line-height.headline.XXL'), fontWeight: weight.semibold },
-    h2: { ...type('type.font-size.headline.XL', 'type.line-height.headline.XL'), fontWeight: weight.semibold },
-    h3: { ...type('type.font-size.headline.L', 'type.line-height.headline.L'), fontWeight: weight.semibold },
-    h4: { ...type('type.font-size.headline.M', 'type.line-height.headline.M'), fontWeight: weight.semibold },
-    h5: { ...type('type.font-size.headline.S', 'type.line-height.headline.S'), fontWeight: weight.semibold },
-    h6: { ...type('type.font-size.headline.XS', 'type.line-height.headline.XS'), fontWeight: weight.semibold },
+    // Headline variants use type.font-family.headline ("Ford-f1") — see the
+    // stack comment above for why it's scoped to just these, not global.
+    h1: { ...type('type.font-size.headline.XXL', 'type.line-height.headline.XXL'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h2: { ...type('type.font-size.headline.XL', 'type.line-height.headline.XL'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h3: { ...type('type.font-size.headline.L', 'type.line-height.headline.L'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h4: { ...type('type.font-size.headline.M', 'type.line-height.headline.M'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h5: { ...type('type.font-size.headline.S', 'type.line-height.headline.S'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
+    h6: { ...type('type.font-size.headline.XS', 'type.line-height.headline.XS'), fontWeight: weight.semibold, fontFamily: headlineFontStack },
     body1: { ...type('type.font-size.body.regular.M', 'type.line-height.body.regular.M'), fontWeight: weight.regular },
     body2: { ...type('type.font-size.body.regular.S', 'type.line-height.body.regular.S'), fontWeight: weight.regular },
     caption: { ...type('type.font-size.caption.S', 'type.line-height.caption.S'), fontWeight: weight.regular },
