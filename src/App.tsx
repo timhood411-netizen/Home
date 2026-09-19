@@ -21,29 +21,34 @@ function App() {
       </AppBar>
 
       <Container maxWidth="lg" sx={{ py: 4 }}>
+        {/* These section wrappers are demo-page scaffolding, not real card
+            surfaces, so bgcolor is pinned to background.default (white)
+            instead of Paper's own background.paper default (Neutral/100,
+            a light grey) — that grey is reserved for actual card UI, like
+            the Card rendered inside CardSection below. */}
         <Stack spacing={4}>
-          <Paper variant="outlined" sx={{ p: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, bgcolor: 'background.default' }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Buttons
             </Typography>
             <ButtonsSection />
           </Paper>
 
-          <Paper variant="outlined" sx={{ p: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, bgcolor: 'background.default' }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Text fields
             </Typography>
             <TextFieldsSection />
           </Paper>
 
-          <Paper variant="outlined" sx={{ p: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, bgcolor: 'background.default' }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Card
             </Typography>
             <CardSection />
           </Paper>
 
-          <Paper variant="outlined" sx={{ p: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, bgcolor: 'background.default' }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Data table
             </Typography>
