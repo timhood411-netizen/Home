@@ -27,6 +27,14 @@ export default function DataTableSection() {
         }}
         pageSizeOptions={[5, 10]}
         disableRowSelectionOnClick
+        // DataGrid defaults its root and column headers to background.paper
+        // (Neutral/100, a light grey) — same reasoning as App.tsx's section
+        // wrappers: this is a demo container, not a card surface, so it's
+        // pinned to background.default (white) instead.
+        sx={{
+          bgcolor: 'background.default',
+          '& .MuiDataGrid-columnHeaders': { bgcolor: 'background.default' },
+        }}
       />
     </Box>
   )
