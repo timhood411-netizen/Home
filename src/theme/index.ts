@@ -160,10 +160,16 @@ export const theme = createTheme({
     borderRadius: num('radius.XS'), // 8px — radius.S/M/L/full have no MUI slot
   },
 
-  // Tokens are 4px-based (spacing.4x = 4), so spacing(1) below equals 4px
-  // instead of MUI's default 8px, to match the scale exactly.
-  spacing: num('scale.4'),
-
+  // No custom theme.spacing base. The tokens are 4px-based (spacing.4x = 4)
+  // but MUI's spacing() multiplier isn't just our own hook — every stock
+  // MUI component's built-in default padding (Card, CardContent, TextField,
+  // etc.) is also expressed as a multiple of it. Overriding the base to 4
+  // shrank all of those to half their intended size, everywhere, in
+  // addition to every spacing={N}/p={N} in this app's own sx props. Left
+  // at MUI's default (8) instead; places that need an exact token pixel
+  // value (MuiButton below) use full CSS property names (paddingInline,
+  // not the p/px/py shorthand) so they read the token value directly
+  // without going through this multiplier at all.
   // No breakpoint tokens in the export. Pulled from the Event Banner
   // component doc instead: mobile/tablet is documented as 320–1023px,
   // desktop as 1024–1919px. xl has no documented range — 2560 is a

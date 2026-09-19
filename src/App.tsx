@@ -20,34 +20,30 @@ function App() {
         </Toolbar>
       </AppBar>
 
-      {/* theme.spacing's base unit is 4px (matching the token scale), not MUI's
-          default 8px, so these multipliers are doubled versus a stock MUI app
-          to land on the same 32px/24px pixel values: py:8 -> 32px, spacing:8
-          -> 32px gap, p:6 -> 24px. */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Stack spacing={8}>
-          <Paper variant="outlined" sx={{ p: 6 }}>
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Stack spacing={4}>
+          <Paper variant="outlined" sx={{ p: 3 }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Buttons
             </Typography>
             <ButtonsSection />
           </Paper>
 
-          <Paper variant="outlined" sx={{ p: 6 }}>
+          <Paper variant="outlined" sx={{ p: 3 }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Text fields
             </Typography>
             <TextFieldsSection />
           </Paper>
 
-          <Paper variant="outlined" sx={{ p: 6 }}>
+          <Paper variant="outlined" sx={{ p: 3 }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Card
             </Typography>
             <CardSection />
           </Paper>
 
-          <Paper variant="outlined" sx={{ p: 6 }}>
+          <Paper variant="outlined" sx={{ p: 3 }}>
             <Typography variant="h5" component="h2" gutterBottom>
               Data table
             </Typography>
